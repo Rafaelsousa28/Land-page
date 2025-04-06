@@ -15,13 +15,10 @@
 <nav class="sticky-top top-0 bg-white dark:bg-gray-900 w-full border-b border-gray-200 dark:border-gray-600">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="#home" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="src/images/logo 2.png" class="block dark:hidden h-auto" alt="Drew Logo">
-            <img src="src/images/logo.png" class="hidden dark:block h-auto" alt="Drew Logo">
+            <img src="src/images/logo 2.png" class="logo-img block dark:hidden h-auto" alt="Drew Logo">
+            <img src="src/images/logo.png" class="logo-img hidden dark:block h-auto" alt="Drew Logo">
         </a>
         <div class="flex md:order-2 space-x-3 md:space-x-1 rtl:space-x-reverse items-center">
-            <button onclick="window.location.href='https://wa.me/33614349032'" type="button" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
-                <span data-lang-key="budget">Orçamento</span>
-            </button>
             <!-- Botão de tema -->
             <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
                 <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -33,10 +30,10 @@
             </button>
             <!-- Botões de idioma com imagens PNG -->
             <button onclick="changeLanguage('pt')" class="language-btn p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
-                <img src="src/images/bandeiras/icons8-brasil-emoji-48.png" alt="Bandeira do Brasil" class="w-8 h-8">
+                <img src="src/images/bandeiras/icons8-brasil-emoji-48.png" alt="Bandeira do Brasil" class="flag-img">
             </button>
             <button onclick="changeLanguage('fr')" class="language-btn p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
-                <img src="src/images/bandeiras/icons8-frança-emoji-48.png" alt="Bandeira da França" class="w-8 h-8">
+                <img src="src/images/bandeiras/icons8-frança-emoji-48.png" alt="Bandeira da França" class="flag-img">
             </button>
         </div>
         <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
@@ -62,70 +59,37 @@
 </nav>
 
 <style>
+    /* Estilo para o botão de idioma (bandeiras) */
     .language-btn {
-        padding: 0.5rem; /* Ajuste de padding para melhor clique */
-        border-radius: 50%; /* Formato circular para os botões */
-        transition: background-color 0.3s ease; /* Transição suave para o hover */
+        padding: 0.5rem;
+        border-radius: 50%;
+        transition: background-color 0.3s ease;
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    .language-btn img {
-        width: 32px; /* Tamanho fixo de 48x48 pixels */
+    .flag-img {
+        width: 32px;
         height: 32px;
     }
     @media (max-width: 768px) {
         .language-btn {
             padding: 0.4rem;
         }
-        .language-btn img {
-            width: 25px; /* Reduz o tamanho das imagens em telas menores */
+        .flag-img {
+            width: 25px;
             height: 25px;
         }
     }
-</style>
 
-<style>
-    .language-btn {
-        font-size: 1.25rem; /* Tamanho das bandeiras */
-        line-height: 1;
-        padding: 0.5rem; /* Ajuste de padding para melhor clique */
-        border-radius: 50%; /* Formato circular para os botões */
-        transition: background-color 0.3s ease; /* Transição suave para o hover */
+    /* Estilo para o logotipo */
+    .logo-img {
+        max-height: 80px;
+        width: auto;
     }
     @media (max-width: 768px) {
-        .language-btn {
-            font-size: 1rem; /* Reduz o tamanho das bandeiras em telas menores */
-            padding: 0.4rem;
-        }
-    }
-</style>
-
-<style>
-    .language-btn {
-        font-size: 1.25rem; /* Tamanho das bandeiras */
-        line-height: 1;
-        padding: 0.5rem; /* Ajuste de padding para melhor clique */
-        border-radius: 50%; /* Formato circular para os botões */
-        transition: background-color 0.3s ease; /* Transição suave para o hover */
-    }
-    @media (max-width: 768px) {
-        .language-btn {
-            font-size: 1rem; /* Reduz o tamanho das bandeiras em telas menores */
-            padding: 0.4rem;
-        }
-    }
-</style>
-
-<style>
-    .language-btn {
-        font-size: 1.25rem; /* Tamanho das bandeiras */
-        line-height: 1;
-    }
-    @media (max-width: 768px) {
-        .language-btn {
-            font-size: 1rem; /* Reduz o tamanho das bandeiras em telas menores */
-            padding: 0.5rem;
+        .logo-img {
+            max-height: 45px; /* Ajustado para um tamanho menor em telas móveis */
         }
     }
 </style>
@@ -147,8 +111,8 @@
             Reparos rápidos, confiáveis e com a qualidade que seu celular merece!
         </p>
         <div class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
-            <a href="#" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-black dark:text-white rounded-lg focus:ring-primary-300 dark:hover:bg-blue-200">
-                <span data-lang-key="home-know-more">Conhecer</span>
+            <a href="https://wa.me/33614349032" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white bg-red-700 hover:bg-red-800 rounded-lg focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                <span data-lang-key="home-know-more">Orçamento</span>
                 <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                 </svg>
@@ -465,7 +429,7 @@
             'home-alert': '<i class="fa-regular fa-lightbulb pe-1"></i> Qual o defeito do seu celular? Nós resolvemos!',
             'home-title': 'Seu celular quebrado?<br> A solução <span class="text-red-700 dark:text-red-500">está aqui!</span>',
             'home-subtitle': 'Reparos rápidos, confiáveis e com a qualidade que seu celular merece!',
-            'home-know-more': 'Conhecer',
+            'home-know-more': 'Orçamento',
             'home-watch-video': 'Assistir vídeo',
             'video-error': 'Desculpe, seu navegador não suporta o elemento de vídeo.',
             'home-experience': '+ de 8 anos de experiência',
@@ -511,7 +475,7 @@
             'home-alert': '<i class="fa-regular fa-lightbulb pe-1"></i> Quel est le problème de votre téléphone ? Nous le réparons !',
             'home-title': 'Votre téléphone est cassé ?<br> La solution <span class="text-red-700 dark:text-red-500">est ici !</span>',
             'home-subtitle': 'Réparations rapides, fiables et avec la qualité que votre téléphone mérite !',
-            'home-know-more': 'En savoir plus',
+            'home-know-more': 'Devis',
             'home-watch-video': 'Regarder la vidéo',
             'video-error': 'Désolé, votre navigateur ne prend pas en charge l’élément vidéo.',
             'home-experience': '+ de 8 ans d’expérience',
